@@ -18,42 +18,44 @@ enum class Case
 	Lower
 };
 
-void ConvertCase(std::string& str, Case reg)
+void ConvertCase(string& str, Case reg)
 {
 	for (char& c : str)
 	{
 		if (reg == Case::Upper)
-			c = std::toupper(c);
+			c = toupper(c);
 		else
-			c = std::tolower(c);
+			c = tolower(c);
 	}
 }
 
 int main() {
 	int choice;
-	std::cout << "choice function: \n 1. CountVowels \n 2. ConvertCase ";
-	std::cin >> choice;
+	cout << "choice function: \n 1. CountVowels \n 2. ConvertCase ";
+	cin >> choice;
 	cin.ignore();
-	switch(choice) {
-		case 1: 
-			char input[100];
-			cout << "Enter string: ";
-			cin.getline(input, 100);
-			size_t result = CountVowels(input);
-			cout << "Count vowels: " << result << endl;
-			break;
-		case 2:
-			std::string text = "";
-			cout << "Enter string: ";
-			getline(cin, text);
-			std::cout << "Original: " << text << std::endl;
-			ConvertCase(text, Case::Upper);
-			std::cout << "Upper registry: " << text << std::endl;
-			ConvertCase(text, Case::Lower);
-			std::cout << "Lower registry: " << text << std::endl;
-			break;
+	switch (choice) {
+	case 1: {
+		char input[100];
+		cout << "Enter string: ";
+		cin.getline(input, 100);
+		size_t result = CountVowels(input);
+		cout << "Count vowels: " << result << endl;
+		break;
 	}
-	
+	case 2: {
+		string text = "";
+		cout << "Enter string: ";
+		getline(cin, text);
+		cout << "Original: " << text << endl;
+		ConvertCase(text, Case::Upper);
+		cout << "Upper registry: " << text << endl;
+		ConvertCase(text, Case::Lower);
+		cout << "Lower registry: " << text << endl;
+		break;
+	}
+	}
 
-    return 0;
+
+	return 0;
 }
