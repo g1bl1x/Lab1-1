@@ -60,9 +60,6 @@ void triangle() {
     }
 }
 int main() {
-    SetConsoleOutputCP(65001);
-    SetConsoleCP(65001);
-
     triangle();
     return 0;
 }
