@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
-#include <windows.h>
-#include "Functions.hpp"
+
 
 bool TriangleExists(int a, int b, int c) {
     return (a + b > c) && (a + c > b) && (b + c > a);
